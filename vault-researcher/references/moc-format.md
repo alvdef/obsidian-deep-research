@@ -11,8 +11,12 @@ tags:
   - status/growing
 created: YYYY-MM-DD HH:mm
 last_updated: YYYY-MM-DD HH:mm
+parent_moc: "[[MOC-parent]]"  # only for sub-MOCs; omit for top-level MOCs
 ---
 ```
+
+`parent_moc` is only present on child MOCs promoted from a section of a
+parent MOC (see sub-MOC promotion in `SKILL.md`). Top-level MOCs omit it.
 
 ```markdown
 # {Title}

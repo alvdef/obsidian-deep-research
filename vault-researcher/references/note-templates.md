@@ -1,5 +1,10 @@
 # Note Templates
 
+**All `created` fields use `YYYY-MM-DD HH:mm` (with time).** This is not
+optional — it disambiguates notes created on the same day and makes the
+research log timeline precise. Never write `2026-03-01`; always write
+`2026-03-01 14:30`.
+
 ## Permanent Note (30-Notes/Permanent/)
 
 ```yaml
@@ -92,6 +97,28 @@ up:
 ```
 
 Body: Context (what decision this informs) → Matrix table → Analysis.
+
+## Fleeting Note (10-Inbox/Fleeting/)
+
+```yaml
+---
+title: Brief description of the fragment
+tags:
+  - type/fleeting
+  - source/ai-generated
+created: YYYY-MM-DD HH:mm
+up:
+  - "[[MOC-parent]]"
+promote_to: permanent|entity|comparison  # intended note type once mature
+---
+```
+
+Body: The finding (1–3 sentences) → Source URL → Why it matters (what
+question does it answer?).
+
+Fleeting notes are temporary — they must be promoted to a proper note type
+or discarded before session end. The `promote_to` field signals what note
+type this should become once there's enough substance.
 
 ## Clipping (10-Inbox/Clippings/)
 

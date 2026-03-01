@@ -20,6 +20,13 @@ create a queryable, interconnected research graph.
 Dependencies: `obsidian-cli`, `obsidian-markdown`, `defuddle` (from
 kepano/obsidian-skills).
 
+> **Every session must end with the [Closing a Session](#closing-a-session)
+> checklist.** The vault's integrity depends on it — orphan notes, stale
+> MOCs, and lost backlog items accumulate when sessions end abruptly. If the
+> user wants to stop, run the Closing steps before exiting. If context is
+> running out, warn the user and run at least the closing report so they
+> can continue manually or in the next session.
+
 ## Before You Start
 
 On first use or when unsure about vault conventions, read these references:
@@ -28,6 +35,7 @@ On first use or when unsure about vault conventions, read these references:
 - `references/note-templates.md` — YAML frontmatter per note type
 - `references/tag-taxonomy.md` — tag namespaces and how to extend them
 - `references/moc-format.md` — MOC template and depth tracker
+- `references/claude-md-spec.md` — what belongs in CLAUDE.md vs the vault
 
 Once familiar, you don't need to re-read them every session — just consult
 when creating a note type you haven't created recently.
@@ -267,9 +275,30 @@ Run this at the END of every session, regardless of what was done:
    >    {full log body}.
    > Confirm each update."
 
-4. **Report to user**: Summarize the session, show MOC state, suggest next
-   steps from the backlog.
-6. **CLAUDE.md hygiene**: First check that `CLAUDE.md` exists at vault root.
+4. **Report to user** — use this exact structure:
+
+   **Session summary** (2–3 sentences: what was investigated, what was decided)
+
+   **Key deliverable** (if the session produced one main note, give its full
+   vault path so the user can open it directly):
+   > `30-Notes/Permanent/PN-{slug}.md`
+
+   **Notes created/modified** (list only the most relevant — not every
+   fleeting note or mechanical MOC edit. Include vault path for each):
+   ```
+   + 30-Notes/Permanent/PN-{slug}.md  — {one-line description}
+   + 30-Notes/Entity/ENT-{slug}.md    — {one-line description}
+   ~ 40-Maps/MOC-{topic}.md           — updated depth tracker, 3 new links
+   ```
+   Use `+` for created, `~` for modified.
+
+   **Open questions** (from the key deliverable or from research gaps — these
+   are actionable next steps, not just "continue research"):
+   1. {Question} — context on why it matters
+   2. {Question} — what it unblocks
+
+   **Suggested next focus** (1–2 concrete items from the backlog, ranked)
+5. **CLAUDE.md hygiene**: First check that `CLAUDE.md` exists at vault root.
    If it does not exist, alert the user:
    > "No CLAUDE.md found. The vault needs one — see
    > `references/claude-md-spec.md` for the template. Should I create it
