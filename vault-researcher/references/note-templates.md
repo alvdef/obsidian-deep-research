@@ -18,6 +18,7 @@ tags:
   - source/ai-generated
   - phase/{current}
 created: YYYY-MM-DD HH:mm
+last_updated: YYYY-MM-DD HH:mm
 related:
   - "[[PN-related]]"
 up:
@@ -65,7 +66,10 @@ tags:
   - source/ai-generated
 entity_type: (domain-specific: company, person, platform, etc.)
 created: YYYY-MM-DD HH:mm
+last_updated: YYYY-MM-DD HH:mm
 website: "https://..."
+related:
+  - "[[ENT-related]]"
 up:
   - "[[MOC-parent]]"
 ---
@@ -88,9 +92,12 @@ tags:
   - confidence/uncertain
   - source/ai-generated
 created: YYYY-MM-DD HH:mm
+last_updated: YYYY-MM-DD HH:mm
 compared_entities:
   - "[[ENT-x]]"
   - "[[ENT-y]]"
+related:
+  - "[[CMP-related]]"
 up:
   - "[[MOC-parent]]"
 ---
@@ -152,3 +159,57 @@ research_project: "[[MOC-project]]"
 
 Body: Session summary → Notes created (wikilinks) → Open questions →
 Next steps.
+
+## Question Note (10-Inbox/Fleeting/ → 30-Notes/Permanent/ when answered)
+
+```yaml
+---
+title: "Question: {question text}"
+tags:
+  - type/question
+  - status/seed
+  - source/ai-generated
+created: YYYY-MM-DD HH:mm
+last_updated: YYYY-MM-DD HH:mm
+up:
+  - "[[MOC-parent]]"
+---
+```
+
+Body: The question → Why it matters → What answering it would unblock →
+Known leads (wikilinks to relevant notes).
+
+Question notes live in `10-Inbox/Fleeting/` with a `Q-` prefix until
+answered. Once answered, promote to a Permanent note in
+`30-Notes/Permanent/` — the answer becomes the claim-based title.
+
+## Hypothesis Note (30-Notes/Permanent/)
+
+```yaml
+---
+title: "Hypothesis: {claim}"
+aliases: []
+tags:
+  - type/hypothesis
+  - status/seed
+  - confidence/speculative
+  - source/ai-generated
+created: YYYY-MM-DD HH:mm
+last_updated: YYYY-MM-DD HH:mm
+evidence_for:
+  - "[[PN-supporting]]"
+evidence_against:
+  - "[[PN-contradicting]]"
+related:
+  - "[[PN-related]]"
+up:
+  - "[[MOC-parent]]"
+---
+```
+
+Body: The hypothesis (1 sentence) → Rationale → Evidence for (linked) →
+Evidence against (linked) → What would confirm or refute it.
+
+Hypotheses start at `confidence/speculative`. As evidence accumulates,
+update confidence per the tag taxonomy. Use `> [!warning]` callouts for
+key assumptions.

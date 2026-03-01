@@ -38,12 +38,18 @@ raw binary files embedded in notes via `![[file.pdf]]`.
 | Entity        | `ENT-{name-slug}`         |
 | Comparison    | `CMP-{subject}`           |
 | MOC           | `MOC-{topic}`             |
-| Log           | `YYYY-MM-DD_HHmm`          |
+| Log           | `YYYY-MM-DD_HHmm`        |
 | Output        | `OUT-{type}-{subject}`    |
+| Question      | `Q-{question-slug}`       |
+| Hypothesis    | `HYP-{claim-slug}`        |
 | Fleeting      | `FL-YYYYMMDD-{slug}`      |
 | Clipping      | `CLIP-YYYYMMDD-{slug}`    |
 
 Kebab-case. No spaces.
+
+**Research Log collision rule**: if a log file with the same timestamp
+already exists, append a letter suffix: `YYYY-MM-DD_HHmma`,
+`YYYY-MM-DD_HHmmb`, `YYYY-MM-DD_HHmmc`, etc.
 
 **Permanent note titles** state the core claim, not the topic. This makes
 wikilinks self-documenting when scanning a MOC — you read the finding without
@@ -62,6 +68,11 @@ opening the note.
 `00-Dashboard/Backlog.md` is a centralized research todo. The agent reads it
 at session start to propose what to work on, and appends new items at session
 end. The user can also edit it between sessions to reprioritize.
+
+**Removal policy**: completed items are **removed entirely** from the backlog,
+not checked off. The session's research log already records what was done, so
+keeping completed items in the backlog creates clutter. Remove the line; the
+log provides the audit trail.
 
 ```markdown
 # Research Backlog

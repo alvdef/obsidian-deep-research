@@ -30,6 +30,30 @@
       "prompt": "Verify our findings on sodium-ion battery costs. Some notes seem to contradict each other.",
       "expected_output": "Agent should: (1) find notes tagged confidence/uncertain on this topic, (2) search for corroborating/contradicting evidence, (3) update confidence tags appropriately, (4) report contradictions with > [!danger] callouts, (5) present findings to user",
       "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "I want to start a new research project on quantum computing supply chains. Here's my vault path: /Users/test/obsidian-vault",
+      "expected_output": "Agent should: (1) run Bootstrap checks — verify obsidian and defuddle CLIs are installed, (2) install any missing dependencies, (3) verify vault folder structure exists and create missing folders via mkdir -p, (4) check for Backlog.md and create if missing, (5) check for CLAUDE.md and offer to create from template if missing, (6) only proceed to Intake after all bootstrap steps pass",
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "The MOC-renewable-energy has a 'Solar panel recycling' section that now has 8 notes linked under it. Should we do something about that?",
+      "expected_output": "Agent should: (1) read the MOC and count notes in the section, (2) recognize 7+ notes triggers sub-MOC promotion, (3) offer to promote 'Solar panel recycling' to a child MOC, (4) explain that the child MOC links back via parent_moc in frontmatter, (5) explain the parent replaces the section with a link under 'Related maps', (6) wait for user approval before creating",
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "Continue researching lithium extraction methods. Pick up where we left off.",
+      "expected_output": "Agent should: (1) attempt to read CLAUDE.md at vault root, (2) if CLAUDE.md is missing, alert the user with the exact message from the Closing section, (3) offer to create CLAUDE.md from the template in references/claude-md-spec.md, (4) still proceed with research by reading vault state from MOCs, Backlog, and Research Log, (5) flag the missing CLAUDE.md again during Closing if it was not created",
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "Here's a comprehensive 5000-word Gemini Deep Research report on global rare earth element supply chains, covering mining operations in 8 countries, 15 processing companies, trade policies, environmental regulations, recycling technologies, and military applications.\n\n[Simulated 5000-word report with 12+ distinct atomic concepts spanning entities, permanent notes, and comparisons]",
+      "expected_output": "Agent should: (1) save as clipping with CLIP- prefix, (2) identify 12+ atomic concepts from the report, (3) present the full decomposition plan with note types for each concept, (4) group related concepts logically, (5) flag existing vault overlap for each concept, (6) wait for user approval before creating any notes, (7) batch all file writes into a single Haiku sub-agent call after synthesis, (8) not skip concepts just because there are many",
+      "files": []
     }
   ]
 }

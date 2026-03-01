@@ -73,7 +73,7 @@
       ],
       "expected_delegates_to_haiku": [
         "apply all MOC edits (wikilinks + depth tracker + questions + gaps)",
-        "apply all Backlog updates (new items + check-offs)",
+        "apply all Backlog updates (new items + remove completed items)",
         "create Research Log file"
       ],
       "must_not_delegate": [
@@ -174,6 +174,36 @@
         "Agent edits CLAUDE.md inline without delegating",
         "Agent migrates without asking user about user-authored content",
         "Agent skips migration and just reports drift"
+      ]
+    },
+    {
+      "id": "mr-7",
+      "name": "Bootstrap — dependency checks delegated to Haiku, decisions in main context",
+      "prompt": "I want to start researching autonomous vehicle regulations. Here's my vault: /Users/test/obsidian-vault",
+      "trigger": "bootstrap_step",
+      "expected_delegates_to_haiku": [
+        "run obsidian help to check if CLI is installed",
+        "run defuddle --help to check if CLI is installed",
+        "install missing dependencies (npx skills add, npm install -g)",
+        "verify vault folder structure exists",
+        "create missing folders via mkdir -p",
+        "create Backlog.md if missing"
+      ],
+      "expected_in_main_context": [
+        "decide whether to proceed or stop if dependencies fail",
+        "check for CLAUDE.md and decide what to put in it",
+        "offer to create CLAUDE.md from template"
+      ],
+      "must_not_delegate": [
+        "deciding whether bootstrap passed or failed",
+        "CLAUDE.md content decisions",
+        "offering to create CLAUDE.md"
+      ],
+      "failure_modes": [
+        "Agent runs dependency checks inline without delegating to Haiku",
+        "Agent delegates CLAUDE.md creation decision to Haiku",
+        "Agent skips bootstrap entirely and goes straight to research",
+        "Agent invents fallback behavior when a dependency is missing instead of stopping"
       ]
     }
   ],
