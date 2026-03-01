@@ -20,9 +20,9 @@ compatibility: >
   package). Not compatible with Claude.ai (no sub-agent or Bash support).
 metadata:
   author: alvdef
-  version: 1.0.0
+  version: "1.0.0"
   category: research
-  tags: [obsidian, knowledge-management, research, zettelkasten, notes]
+  tags: "obsidian, knowledge-management, research, zettelkasten, notes"
 ---
 
 # Vault Researcher
