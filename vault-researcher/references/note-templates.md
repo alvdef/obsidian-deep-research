@@ -160,6 +160,11 @@ research_project: "[[MOC-project]]"
 Body: Session summary → Notes created (wikilinks) → Open questions →
 Next steps.
 
+**All entity, note, and MOC mentions in the log prose must use
+`[[wikilinks]]`**, not just the "notes created" list. Use
+`[[ENT-slug|Display Name]]` aliases for readability. The log is part of
+the knowledge graph — plain-text mentions break the link trail.
+
 ## Question Note (10-Inbox/Fleeting/ → 30-Notes/Permanent/ when answered)
 
 ```yaml

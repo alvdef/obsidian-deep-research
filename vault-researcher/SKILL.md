@@ -299,8 +299,13 @@ Run this at the END of every session, regardless of what was done:
      off — completed items are deleted from the backlog since the research
      log provides the audit trail)
    - Research log: full log body (what was done, notes created, open
-     questions, suggested next steps). If a log file with the same timestamp
-     already exists, append a letter suffix (`a`, `b`, `c`)
+     questions, suggested next steps). **All mentions of vault entities,
+     notes, or MOCs in the log prose must use `[[wikilinks]]`** — not just
+     the "notes created" list. The research log is part of the knowledge
+     graph; plain-text mentions of things like "OTCommerce" or "1688" break
+     the link trail. Use `[[ENT-slug|Display Name]]` aliases for
+     readability. If a log file with the same timestamp already exists,
+     append a letter suffix (`a`, `b`, `c`)
 
 3. **Delegate all writes to a Haiku sub-agent** (one batch call):
 
