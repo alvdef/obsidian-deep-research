@@ -9,8 +9,8 @@
   },
   "plugins": [
     {
-      "name": "vault-researcher",
-      "description": "Turns Claude into a research partner for your Obsidian vault. Runs the full research loop — web research, source decomposition, note synthesis, and vault maintenance — while enforcing a consistent Zettelkasten-style knowledge graph.",
+      "name": "obsidian-deep-research",
+      "description": "Turns Claude into a research partner for your Obsidian vault. Runs the full research loop (web research, source decomposition, note synthesis, and vault maintenance) while enforcing a consistent Zettelkasten-style knowledge graph.",
       "version": "1.0.0",
       "author": {
         "name": "alvdef"
