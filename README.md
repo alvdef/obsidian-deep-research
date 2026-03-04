@@ -34,7 +34,8 @@ Deep research report (Gemini, ChatGPT, Claude)
 ## Install
 
 ```bash
-/install alvdef/obsidian-deep-research
+/plugin marketplace add alvdef/obsidian-deep-research
+/plugin install obsidian-deep-research@alvdef
 ```
 
 Requires:
