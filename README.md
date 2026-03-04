@@ -2,7 +2,10 @@ A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skill for doing 
 
 Feed it a topic or a deep research report. It creates atomic notes, entity profiles, comparison tables, and Maps of Content with wikilinks, structured frontmatter, and source citations. Sessions compound: the agent reads the vault before writing, links to what exists, and fills gaps.
 
-The skill follows a [Zettelkasten](https://en.wikipedia.org/wiki/Zettelkasten)-inspired methodology and enforces a specific structure for folder layout, file naming, frontmatter schemas, tagging, and linking. Every note must connect to an index page and at least one related note. Note titles state a claim, not a topic. AI-generated notes are tagged as uncertain until verified.
+The skill follows a [Zettelkasten](https://en.wikipedia.org/wiki/Zettelkasten)-inspired methodology and enforces a specific structure for folder layout, file naming, frontmatter schemas, tagging, and linking. Every note must connect to an index page and at least one related note. Note titles state a claim, not a topic. AI-generated notes are tagged as uncertain until verified. 
+
+Special thanks to Odysseas for the [Youtube video](https://www.youtube.com/watch?v=hSTy_BInQs8)  that let me know about the method that guides note organization, and the [Zettelkasten](https://zettelkasten.de/) blog for its resources on the topic.
+
 
 
 ## How it works
@@ -39,9 +42,9 @@ Deep research report (Gemini, ChatGPT, Claude)
 ```
 
 Requires:
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (Max or API)
-- [Obsidian](https://obsidian.md/)
-- [`obsidian` CLI](https://github.com/kepano/obsidian-skills) (auto-installed on first run)
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
+- [Obsidian](https://obsidian.md/), enable CLI in Settings > General > Command Line Interface
+- [`obsidian-skills`](https://github.com/kepano/obsidian-skills) (optional too, highly recommended)
 - [`defuddle` CLI](https://www.npmjs.com/package/defuddle-cli) (optional, recommendended on `obsidian-skills`)
 
 
@@ -86,14 +89,9 @@ VAULT ROOT/
 
 Sharing early because it worked. Feedback welcome on note quality, model routing, missing features, and anything that breaks.
 
-## Built with
-
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
-- [obsidian-skills](https://github.com/kepano/obsidian-skills) by kepano
-- [Obsidian](https://obsidian.md/)
 
 ## Special thanks
 
-- [Zettelkasten](https://zettelkasten.de/) — blog on the method behind the note structure
 - [Obsidian: The King of Learning Tools](https://www.youtube.com/watch?v=hSTy_BInQs8) by Odysseas
+- [Zettelkasten](https://zettelkasten.de/) — blog on the method behind the note structure
 
